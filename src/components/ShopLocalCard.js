@@ -3,7 +3,7 @@ import {useHistory} from "react-router-dom";
 const ShopLocalCard = ({img, name, hours}) => {
     let history = useHistory();
     const storeOnline = () => {
-        if (localStorage.getItem('loggedIn')) {
+        if (localStorage.getItem('usertype') === 'consumer') {
             history.push('/storeonline')
         } else {
             history.push('/login');

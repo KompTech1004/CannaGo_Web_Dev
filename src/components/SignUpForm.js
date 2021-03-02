@@ -12,7 +12,7 @@ function SignUpForm() {
 
   let history = useHistory();
   const submitHandler = () => {
-    localStorage.setItem('loggedIn', true)
+    localStorage.setItem('usertype', 'consumer')
     history.push("/");
   }
 
@@ -33,7 +33,7 @@ function SignUpForm() {
       <CustomInput placeholder="Mobile number" type="number" iconType="user" />
       <div className="terms-conditions pos-start">
         <input type="checkbox" id="agreeTerms" name="agreeTerms" />
-        <label htmlFor="agreeTerms" id="agreeLabel"> By checking this I agree to CannaGo's <a href='/' style={{ color: '#61D273' }}> Terms & Conditions</a> </label>
+        <label htmlFor="agreeTerms" id="agreeLabel"> By checking this I agree to CannaGo's <a href='#' style={{ color: '#61D273' }}> Terms & Conditions</a> </label>
       </div>
       <button className="bt-primary">Create Account</button>
 

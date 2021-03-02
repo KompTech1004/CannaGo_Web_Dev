@@ -13,9 +13,14 @@ const CheckoutForm = () => {
     const expHandler = e => {
         let value = e.nativeEvent.data;
         if ((value >= 0 && value < 9)) {
-            if (e.target.value.length === 2)
+            if (e.target.value.length === 2 && !e.target.value.includes('/')) {
                 e.target.value += "/"
+            }
+            else if (e.target.value.length === 1 && e.target.value.includes('/')) {
+                e.target.value = "";
+            }
             setExp(e.target.value)
+
         }
     }
     const cvcHandler = e => {
@@ -30,7 +35,7 @@ const CheckoutForm = () => {
     }
     const cardInput = e => {
         let value = e.nativeEvent.data;
-        if ((value >= 0 && value < 9) || value == " ") {
+        if ((value >= 0 && value < 9) || value === " ") {
             setCard(e.target.value.replace(/\s/g, '').replace(/(\d{4})/g, '$1 ').trim());
         }
     }

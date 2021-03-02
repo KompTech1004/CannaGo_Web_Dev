@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { enteremail, checkemail } from '../constants/LongText'
 import CustomInput from '../components/CustomInput'
 import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button';
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 import forgotlogo from '../images/forgotlogo.png'
@@ -37,6 +36,11 @@ function MyVerticallyCenteredModal(props) {
 
 function ForgotScreen() {
   const [modalShow, setModalShow] = React.useState(false);
+  const [userType, setUserType] = useState('consumer')
+  useEffect(() => {
+    setUserType(localStorage.getItem('usertype'))
+
+  }, [])
   return (
     <div className="forgot-container">
       <section className="forgot-main">
@@ -44,10 +48,30 @@ function ForgotScreen() {
         <h2 className="normal-text">{enteremail}</h2>
         <CustomInput placeholder="Email Address" type="email" iconType="email" width={'46rem'} mt={30} mb={30} />
         <button className="bt-primary" style={{ marginTop: 30 }} onClick={() => setModalShow(true)}>Submit</button>
-        <img src={forgot1} alt="fruit" className="forgotImg1" />
-        <div className="forgot2-wrapper"><img src={forgot2} alt="fruit" className="forgotImg2" /></div>
-        <div className="forgot3-wrapper"><img src={forgot3} alt="fruit" className="forgotImg3" /></div>
-        <div className="forgot4-wrapper"><img src={forgot4} alt="fruit" className="forgotImg4" /></div>
+        {
+          userType === 'consumer' &&
+          <>
+            <img src={forgot1} alt="fruit" className="forgotImg1" />
+            <div className="forgot2-wrapper"><img src={forgot2} alt="fruit" className="forgotImg2" /></div>
+            <div className="forgot3-wrapper"><img src={forgot3} alt="fruit" className="forgotImg3" /></div>
+            <div className="forgot4-wrapper"><img src={forgot4} alt="fruit" className="forgotImg4" /></div>
+          </>
+        }
+        {
+          userType === 'dispensary' &&
+          <>
+            <img src={forgot4} alt="fruit" className="forgotImg4-dispensaries" />
+            <img src={forgot3} alt="fruit" className="forgotImg3-dispensaries" />
+          </>
+        }
+        {
+          userType === 'driver' &&
+          <>
+            <img src={forgot4} alt="fruit" className="forgotImg1-driver" />
+            <div className="forgot3-driver-wrapper"><img src={forgot3} alt="fruit" className="forgotImg3-driver" /></div>
+            <div className="forgot4-driver-wrapper"><img src={forgot4} alt="fruit" className="forgotImg4-driver" /></div>
+          </>
+        }
       </section>
       <MyVerticallyCenteredModal
         show={modalShow}

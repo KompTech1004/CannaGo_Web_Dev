@@ -5,7 +5,7 @@ const ProfileCard = (props) => {
         <button
             onClick={props.onClick}
             className={`profile-card ${props.logout && ' profile-hover'}`}>
-            <img src={props.src}/>
+            <img src={props.src} alt=""/>
             <p>{props.text}</p>
         </button>
     )

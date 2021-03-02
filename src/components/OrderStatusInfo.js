@@ -6,9 +6,9 @@ const OrderStatusInfo = (props) => {
 
             <div className="order-info-check">
                 <button>
-                    {!props.delivered && <img src={Tick}/>}
+                    {props.delivered && <img src={Tick} />}
                 </button>
-                {!props.delivered && <div className="vertical-line"></div>}
+                {props.title.toString().indexOf('Delivered') === -1 && <div className="vertical-line"></div>}
             </div>
             <div className="order-info-text">
                 <h1>{props.title}</h1>

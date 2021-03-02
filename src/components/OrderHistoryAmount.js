@@ -2,8 +2,7 @@ import React, {useState} from 'react'
 import ProfileModal from './ProfileModal'
 
 const OrderHistoryAmount = () => {
-    const [modalShow,
-        setModalShow] = useState(false);
+    const [modalShow,setModalShow] = useState(false);
     const modalHandler = () => {
         setModalShow(true)
     }

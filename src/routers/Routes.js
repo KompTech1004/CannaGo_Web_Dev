@@ -2,7 +2,6 @@ import React from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import LandingScreen from "../pages/LandingScreen";
-import OnlineStoreScreen from "../pages/OnlineStoreScreen";
 import LoginScreen from "../pages/LoginScreen";
 import SignupScreen from "../pages/SignupScreen";
 import ForgotScreen from "../pages/ForgotScreen";
@@ -16,12 +15,22 @@ import OrderExperience from '../pages/OrderExperience';
 import ProfileScreen from '../pages/ProfileScreen'
 import ProfileInformationScreen from '../pages/ProfileInformationScreen'
 import OrderHistoryScreen from '../pages/OrderHistoryScreen';
+
+import DispensaryLandingScreen from '../pages/DispensaryLandingScreen';
+import ShopDispensaryScreen from '../pages/ShopDispensaryScreen';
+import DispensaryInfoScreen from '../pages/DispensaryInfoScreen';
+import StoreAddScreen from '../pages/StoreAddScreen';
+import OrderConfirmScreen from '../pages/OrderConfirmScreen';
+import HourSetScreen from '../pages/HourSetScreen';
+
+import DriverProfileInfoScreen from '../pages/DriverProfileInfoScreen';
+import DriverOrderStatusScreen from '../pages/DriverOrderStatusScreen';
+
 export default function MyRouts() {
     return (
         <Router >
             <Switch>
                 <Route exact path="/" component={LandingScreen}/>
-                <Route path="/onlinestore" component={OnlineStoreScreen}/>
                 <Route path="/login" component={LoginScreen}/>
                 <Route path="/signup" component={SignupScreen}/>
                 <Route path="/forgot" component={ForgotScreen}/>
@@ -35,6 +44,17 @@ export default function MyRouts() {
                 <Route path="/profile" component={ProfileScreen}/>
                 <Route path="/profileinfo" component={ProfileInformationScreen}/>
                 <Route path="/orderhistory" component={OrderHistoryScreen}/>
+
+                <Route path="/dispensarylanding" component={DispensaryLandingScreen}/>
+                <Route path="/shopdispensary" component={ShopDispensaryScreen}/>
+                <Route path="/dispensaryinfo" component={DispensaryInfoScreen}/>
+                <Route path="/storeadd" component={StoreAddScreen}/>
+                <Route path="/updatestore" component={StoreAddScreen}/>
+                <Route path="/orderconfirm" component={OrderConfirmScreen}/>
+                <Route path="/hourset" component={HourSetScreen}/>
+
+                <Route path="/driverprofileinfo" component={DriverProfileInfoScreen}/>
+                <Route path="/driverorderstatus" component={DriverOrderStatusScreen}/>
             </Switch>
         </Router>
     );

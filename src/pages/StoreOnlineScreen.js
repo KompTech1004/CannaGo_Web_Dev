@@ -14,7 +14,7 @@ const StoreOnlineScreen = () => {
                 <ShoppingStations />
             </div>
             <StoreOnlineProducts/>
-            <div className="large-img-cont"><img src={Image} style={{width:"100%"}}/></div>
+            <div className="large-img-cont"><img src={Image} alt="" style={{width:"100%"}}/></div>
             <Footer />
         </>
     )

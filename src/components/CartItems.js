@@ -34,14 +34,12 @@ const CartItems = () => {
                 <div className="cart-cards-cont">
                     {items.map((item, index) => <div className="cart-card">
                         <div className="cart-card-image">
-                            <img src={item.image} width="170" height="200"/>
+                            <img src={item.image} alt="" width="170" height="200"/>
                         </div>
                         <div className="cart-card-text">
                             <p className="cart-card-title">{item.title}</p>
                             <div className="cart-card-quantity">
-                                <p className="cart-card-price">${item
-                                        .price
-                                        .toFixed(2)}</p>
+                                <p className="cart-card-price">${item.price.toFixed(2)}</p>
                                 <p className="cart-card-qu">Quantity</p>
                                 <div className="counter-container">
                                     <button
@@ -63,7 +61,7 @@ const CartItems = () => {
                             </div>
                             <div className="cart-card-remove">
                                 <button onClick={emptyCard}>
-                                    <img src={Delete} className="delete-img"/>
+                                    <img src={Delete} alt="delete" className="delete-img"/>
                                     <p>Remove</p>
                                 </button>
                             </div>
